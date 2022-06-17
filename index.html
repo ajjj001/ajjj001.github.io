@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Abdullah Jawaid</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" />
+
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;200;300;400;500;600;700&display=swap");
+
+        :root {
+            --primary: white;
+            --secondary: black;
+            --hightlight: #497900;
+            --bgr: radial-gradient(at 47% 33%,
+                    rgb(174, 223, 207) 0,
+                    transparent 59%),
+                radial-gradient(at 82% 65%, rgb(164, 184, 219) 0, transparent 55%),
+                radial-gradient(at 3% 88%, rgb(165, 170, 214) 0, transparent 50%);
+        }
+
+        [data-theme="dark"] {
+            --primary: black;
+            --secondary: white;
+            --hightlight: greenyellow;
+            --bgr: radial-gradient(at 47% 33%, rgb(45, 62, 57) 0, transparent 59%),
+                radial-gradient(at 82% 65%, rgb(27, 37, 56) 0, transparent 55%),
+                radial-gradient(at 3% 88%, rgb(65, 69, 108) 0, transparent 50%);
+        }
+
+        body {
+            font-family: "IBM Plex Sans", sans-serif;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            box-sizing: border-box;
+            background: var(--primary);
+            color: var(--secondary);
+            background-image: var(--bgr);
+        }
+
+
+        #greet {
+            opacity: 1;
+            transition: opacity 0.5s;
+        }
+
+        .hide {
+            opacity: 0 !important;
+        }
+
+        .highlight {
+            text-decoration: underline;
+            color: var(--hightlight);
+        }
+
+        #switch-container {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+        }
+
+        .button {
+            transition: all 0.2s ease-in-out;
+            background: none;
+            color: var(--hightlight);
+            border: 1px solid var(--hightlight);
+            padding: 1rem 2rem 1rem 2rem;
+            cursor: pointer;
+            font-size: 1rem;
+            border-radius: 0.25rem;
+        }
+
+        .button:hover {
+            box-shadow: 0 0 1rem var(--hightlight);
+        }
+
+        .icon-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--hightlight);
+            cursor: pointer;
+            border-radius: 0.25rem;
+            background: none;
+            transition: all 0.2s ease-in-out;
+            padding: 0.5rem;
+        }
+
+        .icon-btn:hover {
+            transform: rotate(360deg);
+        }
+
+        #switch {
+            margin-right: 1rem;
+        }
+
+        .contact-container {
+            text-align: center;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-bar {
+            background: var(--hightlight);
+            height: 2px;
+            width: 5rem;
+            margin-right: 1rem;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100vw;
+        }
+
+        .muted {
+            opacity: 0.6;
+        }
+
+        .about {
+            line-height: 1.5;
+            max-width: 50rem;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body data-theme="dark" class="p-3">
+    <div class="top">
+        <div class="contact-container">
+            <div class="contact-bar"></div>
+
+            <a href="https://www.linkedin.com/in/abdullah-jawaid-68b5261b5" target="_blank">
+                <i class="bi bi-linkedin icon-btn" role="img" aria-label="Linkedin"></i>
+            </a>
+            <a href="https://github.com/ajjj001" target="_blank">
+                <i class="bi bi-github icon-btn" role="img" aria-label="Github"></i>
+            </a>
+        </div>
+        <i class="bi bi-sun icon-btn" id="switch"></i>
+    </div>
+
+    <div class="h-100 d-flex flex-column align-items-center justify-content-center">
+        <div class="vstack gap-3 justify-content-center">
+            <p class="display-1 fw-bold">
+                <span id="greet" class="highlight">Hello,</span>
+                <br />
+                I am
+                <span class="highlight"> Abdullah Jawaid. </span>
+            </p>
+            <h2>
+                I am a <span class="highlight">Software Developer</span> based in Hong
+                Kong.
+            </h2>
+
+            <h4 class="pt-3">About Me</h4>
+
+            <p class="about">
+                I am a software developer with a passion for learning and building new
+                things. I am currently working as a Student Intern at
+                <span class="highlight"> MTR</span> where I work on a variety of
+                projects. I am also a finl-year student at
+                <span class="highlight"> HKMU</span> where I am enrolled in the
+                <span class="highlight"> Computing</span> Programme.
+            </p>
+
+            <a href="mailto:abdullahjawaid1999@gmail.com" style="width: fit-content">
+                <button class="button">
+                    <i class="bi bi-envelope-plus" style="margin-right:0.5rem"></i>
+                    Get In Touch
+                </button>
+            </a>
+            <p class="muted">I will try to get back to you as soon as possible.</p>
+        </div>
+    </div>
+
+    <script>
+        const theme = localStorage.getItem("theme");
+        const body = document.body;
+        const switchBtn = document.querySelector("#switch");
+
+        if (theme) {
+            body.setAttribute("data-theme", theme);
+            const icon = theme === "dark" ? "bi-sun" : "bi-moon";
+            switchBtn.classList = `bi icon-btn ${icon}`;
+        }
+
+        document.getElementById("switch").addEventListener("click", () => {
+            const theme = localStorage.getItem("theme");
+            const isLight = theme === "light";
+            const newTheme = isLight ? "dark" : "light";
+            const icon = newTheme === "dark" ? "bi-sun" : "bi-moon";
+            body.setAttribute("data-theme", newTheme);
+            switchBtn.classList = `bi icon-btn ${icon}`;
+            localStorage.setItem("theme", newTheme);
+        });
+
+        let greetings = [
+            "您好",
+            "こんにちは",
+            "안녕하세요",
+            "مرحبا",
+            "Hola",
+            "Bonjour",
+            " Hello",
+        ];
+        let counter = 0;
+        let elem = document.getElementById("greet");
+        setInterval(change, 2500);
+        function change() {
+            elem.classList.add("hide");
+            setTimeout(function () {
+                elem.innerHTML = greetings[counter] + ",";
+                elem.classList.remove("hide");
+                counter++;
+                if (counter >= greetings.length) {
+                    counter = 0;
+                }
+            }, 500);
+        }
+    </script>
+</body>
+
+</html>
