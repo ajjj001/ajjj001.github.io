@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .highlight {
+      @apply underline dark:text-lime-400 text-lime-500;
+    }
+
+    .btn {
+        @apply p-4 text-white dark:text-black bg-lime-500 dark:bg-lime-400 rounded  hover:bg-lime-400  hover:dark:bg-lime-200 ease-linear duration-200;
+    }
+
+    .icon-btn {
+        @apply cursor-pointer text-4xl text-lime-500 dark:text-lime-400 hover:text-lime-400 hover:dark:text-lime-200  ease-linear duration-200
+    }
+
+    .line {
+        @apply w-20 p-0.5 bg-lime-500 dark:bg-lime-400 mr-4;
+    }
+  }
